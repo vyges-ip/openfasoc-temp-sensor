@@ -1,0 +1,148 @@
+{
+  "$schema": "https://vyges.com/schema/v1/vyges-metadata.schema.json",
+  "x-version": "1.0.0",
+  "name": "openfasoc-temp-sensor",
+  "version": "0.1.0",
+  "description": "Analog temperature sensor generator designed for SKY130 and GF180 process nodes, providing automated synthesis and optimization for temperature sensing applications.",
+  "license": "Apache-2.0",
+  "maturity": "rtl_verified",
+  "target": [
+    "asic",
+    "fpga"
+  ],
+  "design_type": [
+    "digital",
+    "analog"
+  ],
+  "created": "2026-04-01T05:15:12Z",
+  "updated": "2026-04-01T05:15:12Z",
+  "source": {
+    "type": "git",
+    "url": "https://github.com/idea-fasoc/OpenFASOC",
+    "commit": "426c17025c7c01d6e7d4d259fb7f9e7d741cc5c4",
+    "ip_path": ".",
+    "private": false,
+    "containsEncryptedPayload": false,
+    "indexing": true
+  },
+  "maintainers": [
+    {
+      "name": "Vyges",
+      "email": "team@vyges.com",
+      "url": "https://vyges.com",
+      "github": "vyges"
+    }
+  ],
+  "interfaces": [
+    {
+      "type": "analog",
+      "direction": "input",
+      "protocol": "custom",
+      "port": "TEMP_ANALOG_lv",
+      "width": 1,
+      "description": "Low-voltage analog temperature input."
+    },
+    {
+      "type": "analog",
+      "direction": "input",
+      "protocol": "custom",
+      "port": "TEMP_ANALOG_hv",
+      "width": 1,
+      "description": "High-voltage analog temperature input."
+    },
+    {
+      "type": "digital",
+      "direction": "output",
+      "protocol": "custom",
+      "port": "counter",
+      "width": 16,
+      "description": "Digital counter output for temperature measurement."
+    }
+  ],
+  "parameters": [
+    {
+      "name": "TEMP_AUTO_def",
+      "type": "bit",
+      "default": 0,
+      "description": "Automatic temperature sensing mode enable."
+    }
+  ],
+  "performance": {},
+  "architecture": {
+    "type": "peripheral",
+    "features": [
+      "Analog temperature sensing",
+      "Digital counter-based measurement",
+      "Process node compatibility with SKY130 and GF180"
+    ]
+  },
+  "asic": {
+    "flavor": "mixed-signal",
+    "technology": [
+      "sky130A",
+      "gf180"
+    ]
+  },
+  "fpga": {
+    "toolchain": [
+      "Vivado"
+    ],
+    "devices": [
+      "Artix-7"
+    ]
+  },
+  "dependencies": [
+    {
+      "name": "sky130_fd_sc_hs",
+      "type": "library",
+      "description": "High-speed standard cell library for SKY130 process."
+    },
+    {
+      "name": "sky130_fd_sc_hvl",
+      "type": "library",
+      "description": "High-voltage standard cell library for SKY130 process."
+    }
+  ],
+  "test": {
+    "testbenches": [],
+    "status": "upstream_passing",
+    "coverage": "functional"
+  },
+  "documentation": {
+    "upstream": "https://github.com/idea-fasoc/OpenFASOC"
+  },
+  "artifacts": {
+    "total_rtl_lines": 11355
+  },
+  "categories": [
+    {
+      "main_category": "Analog & Mixed-Signal",
+      "sub_category": "Temperature Sensors"
+    }
+  ],
+  "keywords": [
+    "temperature sensor",
+    "analog sensing",
+    "SKY130",
+    "GF180",
+    "mixed-signal"
+  ],
+  "trust": {
+    "verification_level": "simulation_passing",
+    "tapeout_count": 0,
+    "fpga_validated": false,
+    "formal_verified": false,
+    "maintained": true,
+    "last_activity": "2026-04-01"
+  },
+  "meta": {
+    "template": {
+      "generator": "github-models-ai",
+      "template_version": "1.0.0",
+      "generated_at": "2026-04-01T05:15:12Z"
+    },
+    "schema": {
+      "version": "1.0.0"
+    }
+  }
+}
